@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fontscope — Saved Fonts</title>
+    <script src="theme-init.js"></script>
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="assets/theme.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="dash-root">
+      <header class="dash-header">
+        <div class="brand">
+          <div class="logo-chip">f</div>
+          <div class="brand-text">
+            <p class="brand-name">Fontscope</p>
+            <p class="brand-sub" id="saved-count">Saved Fonts</p>
+          </div>
+        </div>
+        <button class="icon-btn header-icon" id="theme-toggle" title="Toggle light/dark theme">
+          <span class="icon icon-moon"></span>
+        </button>
+      </header>
+
+      <main class="dash-main">
+        <div class="pairing-hint" id="pairing-hint">
+          <span class="icon icon-users"></span>
+          <span>Select any two saved fonts to preview them paired together.</span>
+        </div>
+
+        <div class="pairing-panel" id="pairing-panel" hidden>
+          <div class="pairing-panel-header">
+            <p class="pairing-title">Pairing Preview</p>
+            <button class="icon-btn" id="pairing-close" title="Clear selection"><span class="icon icon-x"></span></button>
+          </div>
+          <div class="pairing-preview">
+            <p class="pairing-heading" id="pairing-heading">Paradigm of Visual Artistry</p>
+            <p class="pairing-body" id="pairing-body">
+              The quick brown fox jumps over the lazy dog — paired body copy shows how these two fonts read together
+              at a normal text size, so you can judge the contrast before using them side by side.
+            </p>
+          </div>
+          <div class="pairing-labels">
+            <span id="pairing-heading-label">Heading: —</span>
+            <span id="pairing-body-label">Body: —</span>
+          </div>
+        </div>
+
+        <div class="grid" id="grid"></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="icon icon-bookmark empty-icon"></span>
+          <p class="empty-title">No fonts saved yet</p>
+          <p class="empty-body">
+            Open any webpage, click the Fontscope icon, hit Start Inspecting, and use the bookmark icon on a result
+            card to save a font here.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <script src="lib/icons.js"></script>
+    <script src="lib/storage.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

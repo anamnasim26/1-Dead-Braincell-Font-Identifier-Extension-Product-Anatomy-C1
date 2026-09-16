@@ -1,0 +1,40 @@
+{
+  "helvetica": [
+    { "name": "Inter", "source": "Google Fonts" },
+    { "name": "Arial", "source": "System font" }
+  ],
+  "helvetica neue": [
+    { "name": "Inter", "source": "Google Fonts" },
+    { "name": "Arial", "source": "System font" }
+  ],
+  "futura": [
+    { "name": "Century Gothic", "source": "System font" },
+    { "name": "Poppins", "source": "Google Fonts" }
+  ],
+  "proxima nova": [
+    { "name": "Montserrat", "source": "Google Fonts" }
+  ],
+  "gotham": [
+    { "name": "Montserrat", "source": "Google Fonts" },
+    { "name": "Poppins", "source": "Google Fonts" }
+  ],
+  "din": [
+    { "name": "Fjalla One", "source": "Google Fonts" }
+  ],
+  "din next": [
+    { "name": "Fjalla One", "source": "Google Fonts" }
+  ],
+  "avenir": [
+    { "name": "Nunito Sans", "source": "Google Fonts" }
+  ],
+  "avenir next": [
+    { "name": "Nunito Sans", "source": "Google Fonts" }
+  ],
+  "circular": [
+    { "name": "Inter", "source": "Google Fonts" }
+  ],
+  "outfit": [
+    { "name": "Plus Jakarta Sans", "source": "Google Fonts" },
+    { "name": "Sora", "source": "Google Fonts" }
+  ]
+}

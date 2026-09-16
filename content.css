@@ -1,0 +1,314 @@
+:host, #fontscope-root {
+  all: initial;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.fs-highlight {
+  position: fixed;
+  pointer-events: none;
+  border: 1px solid var(--accent);
+  background: var(--accent-bg-wash);
+  border-radius: 4px;
+  z-index: 1;
+  display: none;
+  transition: all 0.06s ease-out;
+}
+
+.fs-toast {
+  position: fixed;
+  pointer-events: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  z-index: 2;
+  display: none;
+}
+
+.fs-card {
+  position: fixed;
+  width: 330px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--card-shadow);
+  color: var(--text-primary);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.fs-row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.fs-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.fs-eyebrow .fs-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.fs-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fs-badge {
+  background: var(--accent-bg-wash);
+  border: 1px solid var(--accent);
+  color: var(--accent-text);
+  font-family: "Fragment Mono", monospace;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.fs-save-btn {
+  background: none;
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.fs-save-btn .fs-icon {
+  width: 13px;
+  height: 13px;
+}
+.fs-save-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-faint);
+}
+.fs-save-btn.is-saved {
+  background: var(--accent-bg-wash);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.fs-save-btn.is-saved .fs-icon svg {
+  fill: currentColor;
+}
+
+.fs-name-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+.fs-font-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fs-sample {
+  background: var(--bg-row);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 13px;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+.fs-section-alt {
+  gap: 8px;
+}
+.fs-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.fs-spec-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-default);
+  font-size: 12px;
+}
+.fs-spec-row:last-child {
+  border-bottom: none;
+}
+.fs-spec-label {
+  width: 100px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+.fs-spec-value {
+  flex: 1 0 0;
+  min-width: 0;
+  text-align: right;
+  font-family: "Fragment Mono", monospace;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fs-distributor-row {
+  background: var(--bg-row-alt);
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.fs-distributor-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-primary);
+}
+.fs-distributor-left .fs-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--text-faint);
+}
+.fs-get-font {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-text);
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+.fs-get-font[disabled] {
+  color: var(--text-faint);
+  text-decoration: none;
+  cursor: default;
+}
+
+.fs-alt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.fs-alt-item {
+  background: var(--bg-row-alt-2);
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fs-alt-text {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.fs-alt-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fs-alt-source {
+  font-size: 10px;
+  color: var(--text-faint);
+}
+.fs-preview-btn {
+  background: var(--border-default);
+  color: var(--text-muted);
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.fs-preview-btn:hover {
+  filter: brightness(1.15);
+}
+.fs-preview-btn.is-active {
+  background: var(--accent);
+  color: white;
+}
+
+.fs-copy-btn {
+  height: 36px;
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+.fs-copy-btn:hover {
+  filter: brightness(1.08);
+}
+.fs-copy-btn .fs-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.fs-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fs-no-text {
+  font-size: 12px;
+  color: var(--text-muted);
+}

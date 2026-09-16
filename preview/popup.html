@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fontscope — Popup Preview</title>
+    <script src="../theme-init.js"></script>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="../assets/theme.css" />
+    <link rel="stylesheet" href="../popup.css" />
+    <style>
+      /* Preview-only chrome around the real popup — a wrapper div, NOT
+         `body`, so it can't collide with popup.css's own `body { width,
+         background: var(--bg-popup) }` rule (that collision previously
+         made light mode unreadable: this file's old `body { background:
+         #1a1a1d }` painted over popup.css's theme-driven body background,
+         leaving light-theme text stranded on a hardcoded dark surface). */
+      .preview-backdrop {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 40px;
+        background: var(--bg-page);
+        min-height: 100vh;
+      }
+      .popup-root {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Real popup markup below, unchanged from ../popup.html -->
+    <div class="preview-backdrop">
+    <div class="popup-root">
+      <header class="header">
+        <div class="brand">
+          <div class="logo-chip">f</div>
+          <div class="brand-text">
+            <p class="brand-name">Fontscope</p>
+            <p class="brand-version">v1.4.2</p>
+          </div>
+        </div>
+        <div class="status-pill" id="status-pill">
+          <span class="status-dot"></span>
+          <span id="status-label">Ready</span>
+        </div>
+      </header>
+
+      <main class="main-body">
+        <div class="intro">
+          <p class="intro-title">Identify web typography instantly</p>
+          <p class="intro-body">
+            Activate the inspecting eye to scope out families, sizes, weights, and complete CSS stylesheets of any element.
+          </p>
+        </div>
+
+        <button class="activate-btn" id="activate-btn">
+          <span class="icon icon-target" aria-hidden="true"></span>
+          <span>Start Inspecting</span>
+        </button>
+
+        <div class="recent-section">
+          <div class="recent-header">
+            <p class="recent-label">Recent Inspections</p>
+            <button class="clear-link" id="clear-link">Clear</button>
+          </div>
+          <div class="recent-list" id="recent-list">
+            <p class="recent-empty" id="recent-empty">No inspections yet — click Start Inspecting on any page.</p>
+          </div>
+        </div>
+      </main>
+
+      <div class="spacer"></div>
+
+      <footer class="footer">
+        <p class="shortcut-hint">Press <span class="mono-key">⌥ I</span> to trigger picker</p>
+        <div class="footer-icons">
+          <span class="icon icon-circle_help footer-icon" title="Help"></span>
+          <button class="icon-btn footer-icon" id="theme-toggle" title="Toggle light/dark theme">
+            <span class="icon icon-moon"></span>
+          </button>
+          <button class="icon-btn footer-icon" id="dashboard-btn" title="Saved Fonts">
+            <span class="icon icon-bookmark"></span>
+          </button>
+        </div>
+      </footer>
+    </div>
+    </div>
+
+    <p style="position: fixed; bottom: 12px; left: 12px; color: var(--text-faint); font: 12px/1.4 sans-serif; max-width: 300px;">
+      Preview mode — backed by localStorage instead of a real background.js. "Start Inspecting" won't do anything here; open <a href="card.html" style="color: var(--accent-text);">card.html</a> to try the on-page picker.
+    </p>
+
+    <script src="mock-chrome.js"></script>
+    <script src="../lib/icons.js"></script>
+    <script src="../lib/storage.js"></script>
+    <script src="../popup.js"></script>
+  </body>
+</html>

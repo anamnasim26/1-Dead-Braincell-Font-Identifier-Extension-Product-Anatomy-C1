@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fontscope — Card Preview</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" />
+    <style>
+      @font-face {
+        /* Self-hosted example, served from our own extension folder — used
+           to exercise the "Self-hosted / View File" Distributor branch. */
+        font-family: "FontscopeMono Demo";
+        src: url("../assets/fonts/FragmentMono-Regular.woff2") format("woff2");
+      }
+      body {
+        margin: 0;
+        background: #0b0b0c;
+        color: #e4e4e7;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        padding: 40px;
+      }
+      .note {
+        max-width: 640px;
+        color: #a1a1aa;
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 40px;
+        padding: 12px 16px;
+        border: 1px solid #27272a;
+        border-radius: 8px;
+        background: #121215;
+      }
+      .note a { color: #a78bfa; }
+      section { margin-bottom: 48px; max-width: 600px; }
+      .label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #a1a1aa;
+        margin-bottom: 8px;
+      }
+      h2.system-font { font-family: Arial, Helvetica, sans-serif; font-size: 32px; margin: 0; }
+      h2.self-hosted { font-family: "FontscopeMono Demo", monospace; font-size: 28px; margin: 0; }
+      h2.google-font { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 40px; margin: 0; }
+      p.unknown-font { font-family: "TotallyMadeUpFont", sans-serif; font-size: 20px; margin: 0; }
+      .empty-target {
+        width: 200px;
+        height: 60px;
+        background: #1c1c22;
+        border: 1px dashed #3f3f46;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="note">
+      <strong>Preview mode.</strong> This page auto-starts picking mode using the real, unmodified
+      <code>content.js</code> / <code>content.css</code> / <code>lib/font-detect.js</code>.
+      Hover the headings/paragraphs below and click to see the result card. Try each one —
+      they're set up to hit different Distributor states. Esc or an outside click closes the card.
+      Open <a href="popup.html">popup.html</a> in another tab to see lookups land in Recent Inspections.
+    </div>
+
+    <section>
+      <p class="label">System font (Arial)</p>
+      <h2 class="system-font">The quick brown fox</h2>
+    </section>
+
+    <section>
+      <p class="label">Self-hosted @font-face</p>
+      <h2 class="self-hosted">Jumps over the lazy dog</h2>
+    </section>
+
+    <section>
+      <p class="label">Google Fonts + alternatives</p>
+      <h2 class="google-font">Paradigm of Visual Artistry</h2>
+    </section>
+
+    <section>
+      <p class="label">Unrecognized font-family</p>
+      <p class="unknown-font">This text claims a font-family nothing on the page actually loads.</p>
+    </section>
+
+    <section>
+      <p class="label">No text here</p>
+      <div class="empty-target"></div>
+    </section>
+
+    <script src="mock-chrome.js"></script>
+    <script src="../lib/icons.js"></script>
+    <script src="../lib/font-detect.js"></script>
+    <script src="../lib/storage.js"></script>
+    <script src="../content.js"></script>
+  </body>
+</html>

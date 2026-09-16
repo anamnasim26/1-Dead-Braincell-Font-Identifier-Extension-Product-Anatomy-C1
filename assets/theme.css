@@ -1,0 +1,51 @@
+/* Shared design tokens for popup.html, dashboard.html, and content.js's
+   shadow DOM. `:root` matches when this is linked into a normal document;
+   `:host` matches when it's linked inside a shadow root (content.css) —
+   both are listed so one file works in every context. Dark is the default
+   (matches the original Figma reference); `data-theme="light"` overrides it. */
+
+:root,
+:host {
+  --bg-page: #0b0b0c;
+  --bg-popup: #121215;
+  --bg-header-footer: #0f0f12;
+  --bg-row: #1f1f24;
+  --bg-row-alt: #1c1c22;
+  --bg-row-alt-2: #1a1a20;
+  --border-default: #27272a;
+  --accent: #8b5cf6;
+  --accent-text: #a78bfa;
+  --accent-bg-wash: rgba(139, 92, 246, 0.13);
+  --text-primary: #ffffff;
+  --text-muted: #a1a1aa;
+  --text-faint: #71717a;
+  --card-bg: rgba(22, 22, 26, 0.92);
+  --card-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  --status-ready: #4ade80;
+  --danger: #ef4444;
+  --danger-bg-wash: rgba(239, 68, 68, 0.12);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"],
+:host([data-theme="light"]) {
+  --bg-page: #f4f4f5;
+  --bg-popup: #ffffff;
+  --bg-header-footer: #f4f4f5;
+  --bg-row: #f4f4f5;
+  --bg-row-alt: #eeeef0;
+  --bg-row-alt-2: #f0f0f2;
+  --border-default: #e4e4e7;
+  --accent: #8b5cf6;
+  --accent-text: #7c3aed;
+  --accent-bg-wash: rgba(139, 92, 246, 0.1);
+  --text-primary: #18181b;
+  --text-muted: #52525b;
+  --text-faint: #71717a;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --status-ready: #16a34a;
+  --danger: #dc2626;
+  --danger-bg-wash: rgba(220, 38, 38, 0.1);
+  color-scheme: light;
+}
