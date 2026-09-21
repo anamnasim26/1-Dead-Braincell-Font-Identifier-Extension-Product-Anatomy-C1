@@ -29,13 +29,16 @@ function renderRecent(list) {
   }
   empty.style.display = "none";
 
+  const avatarColors = ["color-blue", "color-pink", "color-orange", "color-green"];
+
   list.forEach((entry, index) => {
     const row = document.createElement("div");
     row.className = "recent-item" + (index === 0 ? " is-latest" : "");
     row.title = entry.page || "";
 
+    const avatarColor = avatarColors[index % avatarColors.length];
     row.innerHTML = `
-      <div class="recent-avatar" style="font-family: '${(entry.name || "").replace(/'/g, "")}', sans-serif;">Aa</div>
+      <div class="recent-avatar ${avatarColor}" style="font-family: '${(entry.name || "").replace(/'/g, "")}', sans-serif;">Aa</div>
       <div class="recent-text">
         <p class="recent-name">${entry.name || "Unknown"}</p>
         <p class="recent-source">${hostnameAndPath(entry.page)}</p>
