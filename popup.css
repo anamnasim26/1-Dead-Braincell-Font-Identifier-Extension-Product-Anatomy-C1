@@ -51,7 +51,7 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: var(--accent-blue);
+  background: linear-gradient(135deg, #5b8dff, var(--accent-blue));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,7 +81,10 @@ body {
   gap: 6px;
   padding: 4px 10px;
   border-radius: 100px;
-  background: var(--bg-row);
+  background: var(--accent-green-wash);
+}
+.status-pill.inspecting {
+  background: var(--accent-blue-wash);
 }
 .status-dot {
   width: 6px;
@@ -130,7 +133,7 @@ body {
   width: 100%;
   border: none;
   border-radius: 10px;
-  background: var(--accent-blue);
+  background: linear-gradient(135deg, #5b8dff, var(--accent-blue));
   color: white;
   font-family: inherit;
   font-size: 14px;
@@ -211,13 +214,23 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  background: var(--bg-row-alt);
-  color: var(--text-muted);
-}
-.recent-item.is-latest .recent-avatar {
-  background: var(--accent-blue);
   color: white;
   font-weight: 700;
+}
+/* Each recent lookup gets a color from the palette, cycling — echoes the
+   colorful chip row from the moodboard rather than leaving every avatar
+   but the latest one flat gray. */
+.recent-avatar.color-blue {
+  background: linear-gradient(135deg, #5b8dff, var(--accent-blue));
+}
+.recent-avatar.color-pink {
+  background: linear-gradient(135deg, #ff7fc7, var(--accent-pink));
+}
+.recent-avatar.color-orange {
+  background: linear-gradient(135deg, #ffb648, var(--accent-orange));
+}
+.recent-avatar.color-green {
+  background: linear-gradient(135deg, #5fcf7d, var(--accent-green));
 }
 .recent-text {
   flex: 1 0 0;
@@ -285,6 +298,12 @@ body {
 }
 .footer-icon:hover {
   color: var(--text-muted);
+}
+#dashboard-btn.footer-icon {
+  color: var(--accent-pink);
+}
+#dashboard-btn.footer-icon:hover {
+  filter: brightness(0.9);
 }
 .icon-btn {
   background: none;
