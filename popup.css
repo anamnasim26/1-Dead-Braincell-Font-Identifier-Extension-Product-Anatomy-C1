@@ -51,7 +51,7 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: var(--accent);
+  background: var(--accent-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +91,7 @@ body {
   display: inline-block;
 }
 .status-pill.inspecting .status-dot {
-  background: var(--accent);
+  background: var(--accent-blue);
 }
 #status-label {
   font-size: 11px;
@@ -130,7 +130,7 @@ body {
   width: 100%;
   border: none;
   border-radius: 10px;
-  background: var(--accent);
+  background: var(--accent-blue);
   color: white;
   font-family: inherit;
   font-size: 14px;
@@ -140,7 +140,7 @@ body {
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 10px rgba(20, 20, 30, 0.12);
 }
 .activate-btn:hover {
   filter: brightness(1.08);
@@ -174,7 +174,7 @@ body {
   font-family: inherit;
   font-size: 11px;
   font-weight: 600;
-  color: var(--accent-text);
+  color: var(--accent-blue);
   cursor: pointer;
 }
 .recent-list {
@@ -215,7 +215,7 @@ body {
   color: var(--text-muted);
 }
 .recent-item.is-latest .recent-avatar {
-  background: var(--accent);
+  background: var(--accent-blue);
   color: white;
   font-weight: 700;
 }

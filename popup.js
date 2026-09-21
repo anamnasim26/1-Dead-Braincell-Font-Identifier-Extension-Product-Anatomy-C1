@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("theme-toggle").addEventListener("click", async () => {
-    const current = document.documentElement.getAttribute("data-theme") || "dark";
+    const current = document.documentElement.getAttribute("data-theme") || "light";
     const next = current === "dark" ? "light" : "dark";
     await self.FontscopeStorage.setTheme(next);
     applyTheme(next);
